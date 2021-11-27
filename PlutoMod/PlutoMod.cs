@@ -1,22 +1,16 @@
-﻿// JotunnModStub
-// a Valheim mod skeleton using Jötunn
-// 
-// File:    JotunnModStub.cs
-// Project: JotunnModStub
-
-using BepInEx;
+﻿using BepInEx;
 using Jotunn.Entities;
 using Jotunn.Managers;
 
-namespace JotunnModStub
+namespace PlutoMod
 {
     [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
     [BepInDependency(Jotunn.Main.ModGuid)]
     //[NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
-    internal class JotunnModStub : BaseUnityPlugin
+    internal class PlutoMod : BaseUnityPlugin
     {
-        public const string PluginGUID = "com.jotunn.jotunnmodstub";
-        public const string PluginName = "JotunnModStub";
+        public const string PluginGUID = "https://github.com/DrewKestell";
+        public const string PluginName = "PlutoMod";
         public const string PluginVersion = "0.0.1";
         
         // Use this class to add your own localization to the game

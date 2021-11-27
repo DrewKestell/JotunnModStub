@@ -1,8 +1,8 @@
 ﻿{
-  "name": "JotunnModStub",
+  "name": "PlutoMod",
   "description": "",
   "version_number": "0.0.1",
-  "website_url": "",
+  "website_url": "https://github.com/DrewKestell",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.1502",
     ""
