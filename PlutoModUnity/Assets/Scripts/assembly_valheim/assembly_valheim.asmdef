@@ -1,0 +1,22 @@
+{
+    "name": "assembly_valheim",
+    "references": [
+        "GUID:faf98f6bc8977ce43b2e9fed00a6c21e",
+        "GUID:ec493880d460f274fb5c797a12b4e6c2",
+        "GUID:30f5e5243b45ffc4284d32b3972f964c",
+        "GUID:f69d93c5517b9a843834a35bbac01994",
+        "GUID:bda1ecdd7fdfa7543ac3c1a575d8cd7f",
+        "GUID:99d69043f59fc4b4a94903ec3449f1df",
+        "GUID:8e24f9a9bc9c2544f8299f0109ef2750",
+        "GUID:57f6e5d1cf6f0164b9151b8980b181c1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

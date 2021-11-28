@@ -83,9 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <EmbeddedResource Include="AssetsEmbedded\steel" />
     <None Include="Assets\customSkills.json" />
     <None Include="packages.config" />
-    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Package\plugins\" />

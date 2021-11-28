@@ -1,6 +1,9 @@
 ﻿using BepInEx;
+using Jotunn.Configs;
 using Jotunn.Entities;
 using Jotunn.Managers;
+using Jotunn.Utils;
+using UnityEngine;
 
 namespace PlutoMod
 {
@@ -9,6 +12,8 @@ namespace PlutoMod
     //[NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
     internal class PlutoMod : BaseUnityPlugin
     {
+        private AssetBundle steelIngotBundle;
+
         public const string PluginGUID = "com.jotunn.plutomod";
         public const string PluginName = "PlutoMod";
         public const string PluginVersion = "0.0.1";
@@ -19,6 +24,8 @@ namespace PlutoMod
 
         private void Awake()
         {
+            LoadAssets();
+
             // Jotunn comes with MonoMod Detours enabled for hooking Valheim's code
             // https://github.com/MonoMod/MonoMod
             On.FejdStartup.Awake += FejdStartup_Awake;
@@ -45,11 +52,24 @@ namespace PlutoMod
 
         private void Update()
         {
-            var treasureHuntingSkill = SkillManager.Instance.GetSkill("com.jotunn.plutomod.treasurehunting");
+            //var treasureHuntingSkill = SkillManager.Instance.GetSkill("com.jotunn.plutomod.treasurehunting");
 
-            Jotunn.Logger.LogInfo(treasureHuntingSkill.m_skill.ToString());
+            //Player.m_localPlayer.RaiseSkill(treasureHuntingSkill.m_skill, 1);
+        }
 
-            Player.m_localPlayer.RaiseSkill(treasureHuntingSkill.m_skill, 1);
+        private void LoadAssets()
+        {
+            // Load asset bundle from embedded resources
+            Jotunn.Logger.LogInfo($"Embedded resources: {string.Join(",", typeof(PlutoMod).Assembly.GetManifestResourceNames())}");
+            steelIngotBundle = AssetUtils.LoadAssetBundleFromResources("steel", typeof(PlutoMod).Assembly);
+
+            var steelPrefab = steelIngotBundle.LoadAsset<GameObject>("Steel");
+            var steel = new CustomItem(steelPrefab, fixReference: false,
+                new ItemConfig
+                {
+                    Amount = 1
+                });
+            ItemManager.Instance.AddItem(steel);
         }
     }
 }
